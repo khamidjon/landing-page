@@ -8,7 +8,7 @@ const _requestTimeOutInSeconds = Duration(seconds: 7);
 @module
 abstract class DioModule {
   @singleton
-  Dio getUnauthorizedDioClient() {
+  Future<Dio> getUnauthorizedDioClient() async {
     final dioClient = _dioClient();
     dioClient.interceptors.addAll([
       UnauthorizedRequestInterceptor(),
